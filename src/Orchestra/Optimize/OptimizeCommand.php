@@ -43,17 +43,17 @@ class OptimizeCommand extends Command
         $compile    = $laravel['config']->get('compile', array());
         $vendorPath = realpath($laravel['path.base'].'/vendor/');
 
-        $components = array(
-            "asset" => array(
-                "Orchestra/Asset/AssetServiceProvider",
-                "Orchestra/Asset/Container",
-                "Orchestra/Asset/Environment",
-            ),
-        );
+        $components = require __DIR__."/compile.php";
 
         foreach ($components as $name => $classes) {
             foreach ($classes as $class) {
-                $compile[] = "{$vendorPath}/orchestra/{$name}/src/{$class}.php";
+                $file = "{$vendorPath}/orchestra/{$name}/src/{$class}.php";
+
+                if (is_file($file)) {
+                    $compile[] = $file;
+                } else {
+                    $this->info("File not found: [{$file}]");
+                }
             }
         }
 
