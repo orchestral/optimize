@@ -1,0 +1,31 @@
+{
+	"name": "orchestra/optime",
+	"description": "Orchestra Platform 2 Optimize Component",
+	"license": "MIT",
+	"keywords": ["orchestra-platform", "orchestral"],
+	"authors": [
+		{
+			"name": "Mior Muhammad Zaki",
+			"email": "crynobone@gmail.com",
+			"homepage": "https://github.com/crynobone"
+		}
+	],
+	"autoload": {
+		"psr-0": {
+			"Orchestra\\Optimize" : "src/"
+		}
+	},
+	"require": {
+		"php": ">=5.3.3"
+	},
+	"require-dev": {
+		"mockery/mockery": "0.8.0",
+		"orchestra/testbench": "2.0.*"
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "2.1-dev"
+		}
+	},
+	"minimum-stability": "dev"
+}
