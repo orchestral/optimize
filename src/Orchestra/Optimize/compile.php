@@ -109,4 +109,26 @@ return array(
         "Orchestra/Support/Facades/Theme",
         "Orchestra/Support/Facades/Widget",
     ),
+    "translation" => array(
+        "Orchestra/Translation/TranslationServiceProvider",
+        "Orchestra/Translation/FileLoader",
+    ),
+    "view" => array(
+        "Orchestra/View/ViewServiceProvider",
+        "Orchestra/View/DecoratorServiceProvider",
+        "Orchestra/View/Decorator",
+        "Orchestra/View/FileViewFinder",
+        "Orchestra/View/Theme/Container",
+        "Orchestra/View/Theme/Finder",
+        "Orchestra/View/Theme/Manifest",
+        "Orchestra/View/Theme/ThemeManager",
+    ),
+    "widget" => array(
+        "Orchestra/Widget/WidgetServiceProvider",
+        "Orchestra/Widget/WidgetManager",
+        "Orchestra/Widget/Drivers/Driver",
+        "Orchestra/Widget/Drivers/Menu",
+        "Orchestra/Widget/Drivers/Pane",
+        "Orchestra/Widget/Drivers/Placeholder",
+    ),
 );
