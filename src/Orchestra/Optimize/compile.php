@@ -7,7 +7,6 @@ return array(
         "Orchestra/Asset/Environment",
     ),
     "auth" => array(
-        "Orchestra/Auth/AuthServiceProvider",
         "Orchestra/Auth/AuthManager",
         "Orchestra/Auth/Guard",
         "Orchestra/Auth/Acl/Container",
@@ -20,7 +19,6 @@ return array(
         "Orchestra/Debug/Facades/Profiler",
     ),
     "extension" => array(
-        "Orchestra/Extension/ExtensionServiceProvider",
         "Orchestra/Extension/ConfigManager",
         "Orchestra/Extension/Debugger",
         "Orchestra/Extension/Dispatcher",
@@ -39,7 +37,6 @@ return array(
         "Orchestra/Facile/Template/Base",
     ),
     "foundation" => array(
-        "Orchestra/Foundation/FoundationServiceProvider",
         "Orchestra/Foundation/SiteServiceProvider",
         "Orchestra/Foundation/Application",
         "Orchestra/Foundation/Mail",
@@ -47,7 +44,6 @@ return array(
         "Orchestra/Foundation/Services/UserMetaRepository",
     ),
     "html" => array(
-        "Orchestra/Html/HtmlServiceProvider",
         "Orchestra/Html/HtmlBuilder",
         "Orchestra/Html/Abstractable/Builder",
         "Orchestra/Html/Abstractable/Environment",
@@ -62,7 +58,6 @@ return array(
         "Orchestra/Html/Table/TableBuilder",
     ),
     "memory" => array(
-        "Orchestra/Memory/MemoryServiceProvider",
         "Orchestra/Memory/MemoryManager",
         "Orchestra/Memory/Abstractable/Container",
         "Orchestra/Memory/Drivers/Driver",
@@ -127,7 +122,6 @@ return array(
         "Orchestra/View/Theme/ThemeManager",
     ),
     "widget" => array(
-        "Orchestra/Widget/WidgetServiceProvider",
         "Orchestra/Widget/WidgetManager",
         "Orchestra/Widget/Drivers/Driver",
         "Orchestra/Widget/Drivers/Menu",
