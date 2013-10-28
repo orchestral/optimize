@@ -67,7 +67,7 @@ class OptimizeCommand extends Command
             foreach ($classes as $class) {
                 $file = "{$vendorPath}/orchestra/{$name}/src/{$class}.php";
 
-                if ($files->exist($file)) {
+                if ($files->exists($file)) {
                     $compile[] = $file;
                 } else {
                     $this->info("File not found: [{$file}]");
