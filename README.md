@@ -1,4 +1,4 @@
-Optimize Extension
+Orchestra Platform Optimize Component
 ==============
 
-Official Optimization tool for Orchestra Platform, which work based on `php artisan optimize`.
+Optimization tool for Orchestra Platform, which work based on `php artisan optimize`.
