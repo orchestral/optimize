@@ -70,7 +70,7 @@ class OptimizeCommand extends Command
                 if ($files->exists($file)) {
                     $compile[] = $file;
                 } else {
-                    $this->info("File not found: [{$file}]");
+                    $this->comment("File not found: [{$file}]");
                 }
             }
         }
