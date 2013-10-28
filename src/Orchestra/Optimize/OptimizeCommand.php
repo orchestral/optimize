@@ -41,7 +41,7 @@ class OptimizeCommand extends Command
     {
         $laravel    = $this->getLaravel();
         $compile    = $laravel['config']->get('compile', array());
-        $vendorPath = realpath($laravel['app.base'].'/vendor/');
+        $vendorPath = realpath($laravel['path.base'].'/vendor/');
 
         $components = array(
             "asset" => array(
@@ -53,7 +53,7 @@ class OptimizeCommand extends Command
 
         foreach ($components as $name => $classes) {
             foreach ($classes as $class) {
-                $compile[] = "{$vendorPath}/orchestra/{$name}/{$class}";
+                $compile[] = "{$vendorPath}/orchestra/{$name}/src/{$class}.php";
             }
         }
 
@@ -67,7 +67,8 @@ class OptimizeCommand extends Command
      */
     protected function callOptimize()
     {
-        $this->call('optimize', array('--force'));
+        $force = $this->option('force');
+        $this->call('optimize', array('--force' => $force));
     }
 
     /**
@@ -77,6 +78,8 @@ class OptimizeCommand extends Command
      */
     protected function getOptions()
     {
-        return array();
+        return array(
+            array('force', null, InputOption::VALUE_NONE, 'Force the compiled class file to be written.'),
+        );
     }
 }
