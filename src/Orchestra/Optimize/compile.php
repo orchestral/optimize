@@ -83,6 +83,8 @@ return array(
         "Orchestra/Resources/Dispatcher",
         "Orchestra/Resources/Environment",
         "Orchestra/Resources/Response",
+        "Orchestra/Resources/Routing/ControllerDispatcher",
+        "Orchestra/Resources/Routing/Route",
     ),
     "support" => array(
         "Orchestra/Support/MessagesServiceProvider",
@@ -90,6 +92,7 @@ return array(
         "Orchestra/Support/Manager",
         "Orchestra/Support/Messages",
         "Orchestra/Support/Nesty",
+        "Orchestra/Support/Relic",
         "Orchestra/Support/Str",
         "Orchestra/Support/Validator",
         "Orchestra/Support/Facades/Acl",

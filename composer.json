@@ -20,11 +20,11 @@
 	},
 	"require-dev": {
 		"mockery/mockery": "0.8.0",
-		"symfony/event-dispatcher": "2.3.*",
-		"illuminate/console": "4.0.*",
-		"illuminate/container": "4.0.*",
-		"illuminate/filesystem": "4.0.*",
-		"illuminate/support": "4.0.*"
+		"symfony/event-dispatcher": "2.4.*",
+		"illuminate/console": "4.1.*",
+		"illuminate/container": "4.1.*",
+		"illuminate/filesystem": "4.1.*",
+		"illuminate/support": "4.1.*"
 	},
 	"extra": {
 		"branch-alias": {
