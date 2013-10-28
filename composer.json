@@ -2,7 +2,7 @@
 	"name": "orchestra/optimize",
 	"description": "Orchestra Platform 2 Optimize Component",
 	"license": "MIT",
-	"keywords": ["orchestra-platform", "orchestral", "extension"],
+	"keywords": ["orchestra-platform", "orchestral"],
 	"authors": [
 		{
 			"name": "Mior Muhammad Zaki",
