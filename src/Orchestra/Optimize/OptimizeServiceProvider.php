@@ -19,7 +19,8 @@ class OptimizeServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app['orchestra.commands.optimize'] = $this->app->share(function () {
-            return new OptimizeCommand;
+            $components = require __DIR__."/compile.php";
+            return new OptimizeCommand($components);
         });
 
         $this->commands('orchestra.commands.optimize');

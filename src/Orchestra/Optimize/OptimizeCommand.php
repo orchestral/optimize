@@ -22,6 +22,25 @@ class OptimizeCommand extends Command
     protected $description = 'Optimize the framework for better performance';
 
     /**
+     * List of Classes/Components to be compiled.
+     *
+     * @var array
+     */
+    protected $components = array();
+
+    /**
+     * Construct a new instance.
+     *
+     * @param  array   $components
+     */
+    public function __construct(array $components = array())
+    {
+        parent::__construct();
+
+        $this->components = $components;
+    }
+
+    /**
      * Execute the console command.
      *
      * @return void
@@ -40,16 +59,15 @@ class OptimizeCommand extends Command
     protected function addOptimizableClasses()
     {
         $laravel    = $this->getLaravel();
+        $files      = $laravel['files'];
         $compile    = $laravel['config']->get('compile', array());
         $vendorPath = realpath($laravel['path.base'].'/vendor/');
 
-        $components = require __DIR__."/compile.php";
-
-        foreach ($components as $name => $classes) {
+        foreach ($this->components as $name => $classes) {
             foreach ($classes as $class) {
                 $file = "{$vendorPath}/orchestra/{$name}/src/{$class}.php";
 
-                if (is_file($file)) {
+                if ($files->exist($file)) {
                     $compile[] = $file;
                 } else {
                     $this->info("File not found: [{$file}]");
