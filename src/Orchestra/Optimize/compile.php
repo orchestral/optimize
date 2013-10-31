@@ -107,10 +107,6 @@ return array(
         "Orchestra/Support/Facades/Theme",
         "Orchestra/Support/Facades/Widget",
     ),
-    "translation" => array(
-        "Orchestra/Translation/TranslationServiceProvider",
-        "Orchestra/Translation/FileLoader",
-    ),
     "view" => array(
         "Orchestra/View/ViewServiceProvider",
         "Orchestra/View/DecoratorServiceProvider",
