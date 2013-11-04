@@ -4,6 +4,8 @@ return array(
     "asset" => array(
         "Orchestra/Asset/AssetServiceProvider",
         "Orchestra/Asset/Container",
+        "Orchestra/Asset/DependencyResolver",
+        "Orchestra/Asset/Dispatcher",
         "Orchestra/Asset/Environment",
     ),
     "auth" => array(
