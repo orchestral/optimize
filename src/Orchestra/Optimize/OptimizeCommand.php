@@ -1,9 +1,7 @@
 <?php namespace Orchestra\Optimize;
 
 use Illuminate\Console\Command;
-use Orchestra\Support\Str;
 use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Input\InputArgument;
 
 class OptimizeCommand extends Command
 {
