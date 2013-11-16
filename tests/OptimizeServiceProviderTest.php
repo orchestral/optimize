@@ -39,9 +39,10 @@ class OptimizeServiceProviderTest extends \PHPUnit_Framework_TestCase
     {
         $app = $this->app;
         $app['events'] = $events = m::mock('EventDispatcher');
+        $app['files']  = $files  = m::mock('\Illuminate\Filesystem\Filesystem');
 
-        $events->shouldReceive('listen')->once()
-                ->with('artisan.start', m::type('Closure'))->andReturn(null);
+        $files->shouldReceive('getRequire')->once()->andReturn(array());
+        $events->shouldReceive('listen')->once()->with('artisan.start', m::type('Closure'))->andReturn(null);
 
         $stub = new OptimizeServiceProvider($app);
 
