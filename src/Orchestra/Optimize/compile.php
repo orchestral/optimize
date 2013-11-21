@@ -41,7 +41,7 @@ return array(
         "Orchestra/Foundation/Application",
         "Orchestra/Foundation/Mail",
         "Orchestra/Foundation/Site",
-        "Orchestra/Foundation/Services/UserMetaRepository",
+        "Orchestra/Foundation/UserMetaRepository",
     ),
     "html" => array(
         "Orchestra/Html/HtmlBuilder",
