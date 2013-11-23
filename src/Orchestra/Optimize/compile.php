@@ -38,6 +38,7 @@ return array(
     ),
     "foundation" => array(
         "Orchestra/Foundation/SiteServiceProvider",
+        "Orchestra/Foundation/Abstractable/RouteManager",
         "Orchestra/Foundation/Application",
         "Orchestra/Foundation/Mail",
         "Orchestra/Foundation/Site",
