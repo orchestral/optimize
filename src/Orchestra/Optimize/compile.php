@@ -18,7 +18,6 @@ return array(
     "debug" => array(
         "Orchestra/Debug/DebugServiceProvider",
         "Orchestra/Debug/Profiler",
-        "Orchestra/Debug/Facades/Profiler",
     ),
     "extension" => array(
         "Orchestra/Extension/ConfigManager",
@@ -105,6 +104,7 @@ return array(
         "Orchestra/Support/Facades/Mail",
         "Orchestra/Support/Facades/Memory",
         "Orchestra/Support/Facades/Messages",
+        "Orchestra/Support/Facades/Profiler",
         "Orchestra/Support/Facades/Publisher",
         "Orchestra/Support/Facades/Resources",
         "Orchestra/Support/Facades/Site",
