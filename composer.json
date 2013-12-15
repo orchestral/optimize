@@ -21,14 +21,16 @@
 	"require-dev": {
 		"mockery/mockery": "0.8.0",
 		"symfony/event-dispatcher": "2.3.*",
+		"illuminate/config": "4.0.*",
 		"illuminate/console": "4.0.*",
 		"illuminate/container": "4.0.*",
+		"illuminate/events": "4.0.*",
 		"illuminate/filesystem": "4.0.*",
 		"illuminate/support": "4.0.*"
 	},
 	"extra": {
 		"branch-alias": {
-			"dev-master": "2.1-dev"
+			"dev-master": "2.2-dev"
 		}
 	},
 	"minimum-stability": "dev"
