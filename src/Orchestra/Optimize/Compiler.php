@@ -21,7 +21,7 @@ class Compiler
     protected $files;
 
     /**
-     * Bath path.
+     * Bath vendor path.
      *
      * @var string
      */
@@ -59,11 +59,10 @@ class Compiler
     {
         $failed  = array();
         $compile = $this->config->get('compile', array());
-        $vendorPath = realpath($this->path.'/vendor');
 
         foreach ($this->components as $name => $classes) {
             foreach ($classes as $class) {
-                $file = "{$vendorPath}/orchestra/{$name}/src/{$class}.php";
+                $file = "{$this->path}/orchestra/{$name}/src/{$class}.php";
 
                 if ($this->files->exists($file)) {
                     $compile[] = $file;

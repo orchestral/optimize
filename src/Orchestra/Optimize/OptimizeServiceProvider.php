@@ -45,8 +45,9 @@ class OptimizeServiceProvider extends ServiceProvider
     {
         $this->app['orchestra.optimize'] = $this->app->share(function ($app) {
             $components = $app['files']->getRequire(__DIR__."/compile.php");
+            $path = realpath($app['path.base'].'/vendor');
 
-            return new Compiler($app['config'], $app['files'], $app['path.base'], $components);
+            return new Compiler($app['config'], $app['files'], $path, $components);
         });
     }
 
