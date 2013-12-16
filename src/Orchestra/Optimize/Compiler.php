@@ -1,6 +1,6 @@
 <?php namespace Orchestra\Optimize;
 
-use Illuminate\Config\FileLoader;
+use Illuminate\Config\Repository;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Fluent;
 
@@ -9,7 +9,7 @@ class Compiler
     /**
      * Config instance.
      *
-     * @var \Illuminate\Config\FileLoader
+     * @var \Illuminate\Config\Repository
      */
     protected $config;
 
@@ -37,12 +37,12 @@ class Compiler
     /**
      * Construct a new instance.
      *
-     * @param  \Illuminate\Config\FileLoader        $config
+     * @param  \Illuminate\Config\Repository        $config
      * @param  \Illuminate\Filesystem\Filesystem    $files
      * @param  string                               $path
      * @param  array                                $components
      */
-    public function __construct(FileLoader $config, Filesystem $files, $path, array $components = array())
+    public function __construct(Repository $config, Filesystem $files, $path, array $components = array())
     {
         $this->config = $config;
         $this->files = $files;

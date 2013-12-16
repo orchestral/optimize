@@ -22,7 +22,7 @@ class CompilerTest extends \PHPUnit_Framework_TestCase
      */
     public function testRunMethod()
     {
-        $config     = m::mock('\Illuminate\Config\FileLoader');
+        $config     = m::mock('\Illuminate\Config\Repository');
         $files      = m::mock('\Illuminate\Filesystem\Filesystem');
         $path       = '/var/www/laravel/vendor';
         $components = array(
