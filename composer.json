@@ -19,8 +19,7 @@
 		"php": ">=5.3.3"
 	},
 	"require-dev": {
-		"mockery/mockery": "0.8.0",
-		"symfony/event-dispatcher": "2.3.*",
+		"mockery/mockery": "0.8.*",
 		"illuminate/config": "4.0.*",
 		"illuminate/console": "4.0.*",
 		"illuminate/container": "4.0.*",
