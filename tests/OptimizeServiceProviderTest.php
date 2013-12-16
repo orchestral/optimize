@@ -38,7 +38,7 @@ class OptimizeServiceProviderTest extends \PHPUnit_Framework_TestCase
     public function testRegisterMethod()
     {
         $app = $this->app;
-        $app['config'] = $config = m::mock('\Illuminate\Config\FileLoader');
+        $app['config'] = $config = m::mock('\Illuminate\Config\Repository');
         $app['events'] = $events = m::mock('\Illuminate\Events\Dispatcher');
         $app['files']  = $files  = m::mock('\Illuminate\Filesystem\Filesystem');
         $app['path.base'] = '/var/www/laravel';
