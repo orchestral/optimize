@@ -38,8 +38,10 @@ class OptimizeServiceProviderTest extends \PHPUnit_Framework_TestCase
     public function testRegisterMethod()
     {
         $app = $this->app;
-        $app['events'] = $events = m::mock('EventDispatcher');
+        $app['config'] = $config = m::mock('\Illuminate\Config\FileLoader');
+        $app['events'] = $events = m::mock('\Illuminate\Events\Dispatcher');
         $app['files']  = $files  = m::mock('\Illuminate\Filesystem\Filesystem');
+        $app['path.base'] = '/var/www/laravel';
 
         $files->shouldReceive('getRequire')->once()->andReturn(array());
         $events->shouldReceive('listen')->once()->with('artisan.start', m::type('Closure'))->andReturn(null);
@@ -60,6 +62,11 @@ class OptimizeServiceProviderTest extends \PHPUnit_Framework_TestCase
     {
         $stub = new OptimizeServiceProvider($this->app);
 
-        $this->assertEquals(array('orchestra.commands.optimize'), $stub->provides());
+        $expected = array(
+            'orchestra.commands.optimize',
+            'orchestra.optimize',
+        );
+
+        $this->assertEquals($expected, $stub->provides());
     }
 }

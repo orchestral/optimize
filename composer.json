@@ -20,9 +20,10 @@
 	},
 	"require-dev": {
 		"mockery/mockery": "0.8.*",
-		"symfony/event-dispatcher": "2.4.*",
+		"illuminate/config": "4.1.*",
 		"illuminate/console": "4.1.*",
 		"illuminate/container": "4.1.*",
+		"illuminate/events": "4.1.*",
 		"illuminate/filesystem": "4.1.*",
 		"illuminate/support": "4.1.*"
 	},
