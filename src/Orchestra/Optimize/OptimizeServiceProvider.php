@@ -18,13 +18,36 @@ class OptimizeServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app['orchestra.commands.optimize'] = $this->app->share(function ($app) {
-            $components = $app['files']->getRequire(__DIR__."/compile.php");
+        $this->registerCompiler();
+        $this->registerCommand();
+    }
 
-            return new OptimizeCommand($components);
+    /**
+     * Register the service provider.
+     *
+     * @return void
+     */
+    protected function registerCommand()
+    {
+        $this->app['orchestra.commands.optimize'] = $this->app->share(function ($app) {
+            return new OptimizeCommand($app['orchestra.optimize']);
         });
 
         $this->commands('orchestra.commands.optimize');
+    }
+
+    /**
+     * Register the service provider.
+     *
+     * @return void
+     */
+    protected function registerCompiler()
+    {
+        $this->app['orchestra.optimize'] = $this->app->share(function ($app) {
+            $components = $app['files']->getRequire(__DIR__."/compile.php");
+
+            return new Compiler($app['config'], $app['files'], $app['path.base'], $components);
+        });
     }
 
     /**
@@ -34,6 +57,6 @@ class OptimizeServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return array('orchestra.commands.optimize');
+        return array('orchestra.commands.optimize', 'orchestra.optimize');
     }
 }
