@@ -126,9 +126,9 @@ return array(
     ),
     "widget" => array(
         "Orchestra/Widget/WidgetManager",
-        "Orchestra/Widget/Drivers/Driver",
-        "Orchestra/Widget/Drivers/Menu",
-        "Orchestra/Widget/Drivers/Pane",
-        "Orchestra/Widget/Drivers/Placeholder",
+        "Orchestra/Widget/Factory",
+        "Orchestra/Widget/MenuWidgetHandler",
+        "Orchestra/Widget/PaneWidgetHandler",
+        "Orchestra/Widget/PlaceholderWidgetHandler",
     ),
 );
