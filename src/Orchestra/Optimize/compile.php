@@ -42,6 +42,7 @@ return array(
         "Orchestra/Foundation/Abstractable/RouteManager",
         "Orchestra/Foundation/Application",
         "Orchestra/Foundation/Site",
+        "Orchestra/Foundation/UserMetaProvider",
         "Orchestra/Foundation/UserMetaRepository",
     ),
     "html" => array(
@@ -63,11 +64,13 @@ return array(
     "memory" => array(
         "Orchestra/Memory/MemoryManager",
         "Orchestra/Memory/Abstractable/Container",
-        "Orchestra/Memory/Drivers/Driver",
-        "Orchestra/Memory/Drivers/Cache",
-        "Orchestra/Memory/Drivers/Eloquent",
-        "Orchestra/Memory/Drivers/Fluent",
-        "Orchestra/Memory/Drivers/Runtime",
+        "Orchestra/Memory/Abstractable/Handler",
+        "Orchestra/Memory/MemoryHandlerInterface",
+        "Orchestra/Memory/Provider",
+        "Orchestra/Memory/CacheMemoryHandler",
+        "Orchestra/Memory/EloquentMemoryHandler",
+        "Orchestra/Memory/FluentMemoryHandler",
+        "Orchestra/Memory/RuntimeMemoryHandler",
     ),
     "model" => array(
         "Orchestra/Model/Role",
@@ -77,6 +80,7 @@ return array(
     ),
     "notifier" => array(
         "Orchestra/Notifier/NotifierServiceProvider",
+        "Orchestra/Notifier/Mailer",
     ),
     "resources" => array(
         "Orchestra/Resources/ResourcesServiceProvider",
