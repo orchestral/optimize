@@ -63,10 +63,10 @@ return array(
     ),
     "memory" => array(
         "Orchestra/Memory/MemoryManager",
+        "Orchestra/Memory/Provider",
         "Orchestra/Memory/Abstractable/Container",
         "Orchestra/Memory/Abstractable/Handler",
         "Orchestra/Memory/MemoryHandlerInterface",
-        "Orchestra/Memory/Provider",
         "Orchestra/Memory/CacheMemoryHandler",
         "Orchestra/Memory/EloquentMemoryHandler",
         "Orchestra/Memory/FluentMemoryHandler",
@@ -117,6 +117,10 @@ return array(
         "Orchestra/Support/Facades/Table",
         "Orchestra/Support/Facades/Theme",
         "Orchestra/Support/Facades/Widget",
+    ),
+    "translation" => array(
+        "Orchestra/Translation/TranslationServiceProvider",
+        "Orchestra/Translation/FileLoader",
     ),
     "view" => array(
         "Orchestra/View/ViewServiceProvider",
