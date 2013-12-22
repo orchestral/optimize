@@ -22,31 +22,46 @@ class CompilerTest extends \PHPUnit_Framework_TestCase
      */
     public function testRunMethod()
     {
-        $config     = m::mock('\Illuminate\Config\Repository');
-        $files      = m::mock('\Illuminate\Filesystem\Filesystem');
-        $path       = '/var/www/laravel/vendor';
+        $config = m::mock('\Illuminate\Config\Repository');
+        $files  = m::mock('\Illuminate\Filesystem\Filesystem');
+        $path   = '/var/www/laravel/vendor';
+
         $components = array(
             'asset' => array(
                 'AssetServiceProvider',
                 'NoneExistClass',
             ),
+            'foo' => array(
+                'FooServiceProvider',
+            ),
         );
 
-        $succeed = array("{$path}/orchestra/asset/src/AssetServiceProvider.php");
-        $failed  = array("{$path}/orchestra/asset/src/NoneExistClass.php");
+        $added = array(
+            "{$path}/orchestra/asset/src/AssetServiceProvider.php",
+            "{$path}/orchestra/foo/src/FooServiceProvider.php",
+            "app/Foobar.php",
+        );
+        $missing  = array(
+            "{$path}/orchestra/asset/src/NoneExistClass.php",
+        );
 
-        $config->shouldReceive('get')->once()->with('compile', array())->andReturn(array())
-            ->shouldReceive('set')->once()->with('compile', $succeed)->andReturn(null);
+        $config->shouldReceive('get')->once()->with('compile', array())
+                ->andReturn(array(
+                    "app/Foobar.php",
+                ))
+            ->shouldReceive('set')->once()->with('compile', $added)->andReturn(null);
         $files->shouldReceive('exists')->once()
                 ->with("{$path}/orchestra/asset/src/AssetServiceProvider.php")->andReturn(true)
             ->shouldReceive('exists')->once()
-                ->with("{$path}/orchestra/asset/src/NoneExistClass.php")->andReturn(false);
+                ->with("{$path}/orchestra/asset/src/NoneExistClass.php")->andReturn(false)
+            ->shouldReceive('exists')->once()
+                ->with("{$path}/orchestra/foo/src/FooServiceProvider.php")->andReturn(true);
         $stub = new Compiler($config, $files, $path, $components);
         $compiled = $stub->run();
 
         $expected = new Fluent(array(
-            'succeed' => $succeed,
-            'failed'  => $failed,
+            'added'   => $added,
+            'missing' => $missing,
         ));
 
         $this->assertEquals($expected, $compiled);
