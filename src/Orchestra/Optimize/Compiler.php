@@ -35,6 +35,40 @@ class Compiler
     protected $components = array();
 
     /**
+     * Arrange priority for compilation.
+     *
+     * @var array
+     */
+    protected $arrange = array(
+        'translation',
+        'testbench',
+        'support',
+        'debug',
+        'model',
+        'memory',
+        'facile',
+        'asset',
+        'auth',
+        'extension',
+        'html',
+        'resources',
+        'view',
+        'warden',
+        'widget',
+        'foundation',
+    );
+
+    /**
+     * Files collection.
+     *
+     * @var array
+     */
+    protected $collection = array(
+        'added'   => array(),
+        'missing' => array(),
+    );
+
+    /**
      * Construct a new instance.
      *
      * @param  \Illuminate\Config\Repository        $config
@@ -57,26 +91,67 @@ class Compiler
      */
     public function run()
     {
-        $failed  = array();
-        $compile = $this->config->get('compile', array());
+        // Run compilation based on class dependencies.
+        $this->runCompilationByArrangedPriority();
 
+        // Run remaining components (if any).
         foreach ($this->components as $name => $classes) {
-            foreach ($classes as $class) {
-                $file = "{$this->path}/orchestra/{$name}/src/{$class}.php";
-
-                if ($this->files->exists($file)) {
-                    $compile[] = $file;
-                } else {
-                    $failed[] = $file;
-                }
-            }
+            $this->compileGroupClasses($name, $classes);
         }
 
-        $this->config->set('compile', $compile);
+        // Append application file to the bottom.
+        $original = $this->config->get('compile', array());
+
+        foreach ($original as $class) {
+            $this->collection['added'][] = $class;
+        }
+
+        $this->config->set('compile', $this->collection['added']);
 
         return new Fluent(array(
-            'succeed' => $compile,
-            'failed'  => $failed,
+            'added'   => $this->collection['added'],
+            'missing' => $this->collection['missing'],
         ));
+    }
+
+    /**
+     * Compilation should be appended by priority to avoid class redeclared
+     * issue.
+     *
+     * @return void
+     */
+    protected function runCompilationByArrangedPriority()
+    {
+        foreach ($this->arrange as $name) {
+            if (! isset($this->components[$name])) {
+                continue;
+            }
+
+            $classes = $this->components[$name];
+
+            $this->compileGroupClasses($name, $classes);
+
+            unset($this->components[$name]);
+        }
+    }
+
+    /**
+     * Compile classes by group.
+     *
+     * @param  string  $name
+     * @param  array   $classes
+     * @return void
+     */
+    protected function compileGroupClasses($name, array $classes)
+    {
+        foreach ($classes as $class) {
+            $file = "{$this->path}/orchestra/{$name}/src/{$class}.php";
+
+            if ($this->files->exists($file)) {
+                $this->collection['added'][] = $file;
+            } else {
+                $this->collection['missing'][] = $file;
+            }
+        }
     }
 }

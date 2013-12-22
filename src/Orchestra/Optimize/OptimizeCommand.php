@@ -56,9 +56,9 @@ class OptimizeCommand extends Command
      */
     protected function addOptimizableClasses()
     {
-        $compiled = $this->compiler->run();
+        $collection = $this->compiler->run();
 
-        foreach ($compiled->failed as $file) {
+        foreach ($collection->missing as $file) {
             $this->comment("File not found: [{$file}]");
         }
     }
