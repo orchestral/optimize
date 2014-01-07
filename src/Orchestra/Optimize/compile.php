@@ -80,7 +80,8 @@ return array(
     ),
     "notifier" => array(
         "Orchestra/Notifier/NotifierServiceProvider",
-        "Orchestra/Notifier/Mailer",
+        "Orchestra/Notifier/NotifierInterface",
+        "Orchestra/Notifier/RecipientInterface",
     ),
     "resources" => array(
         "Orchestra/Resources/ResourcesServiceProvider",
