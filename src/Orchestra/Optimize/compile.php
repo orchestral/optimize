@@ -42,8 +42,6 @@ return array(
         "Orchestra/Foundation/Abstractable/RouteManager",
         "Orchestra/Foundation/Application",
         "Orchestra/Foundation/Site",
-        "Orchestra/Foundation/UserMetaProvider",
-        "Orchestra/Foundation/UserMetaRepository",
     ),
     "html" => array(
         "Orchestra/Html/HtmlBuilder",
@@ -77,6 +75,8 @@ return array(
         "Orchestra/Model/User",
         "Orchestra/Model/UserMeta",
         "Orchestra/Model/Observer/Role",
+        "Orchestra/Model/Memory/UserMetaProvider",
+        "Orchestra/Model/Memory/UserMetaRepository",
     ),
     "notifier" => array(
         "Orchestra/Notifier/NotifierServiceProvider",
