@@ -11,8 +11,8 @@
 		}
 	],
 	"autoload": {
-		"psr-0": {
-			"Orchestra\\Optimize" : "src/"
+		"psr-4": {
+			"Orchestra\\Optimize\\" : "src/Optimize/"
 		}
 	},
 	"require": {
