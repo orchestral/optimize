@@ -31,8 +31,8 @@ return array(
     ),
     "facile" => array(
         "Facile/FacileServiceProvider",
+        "Facile/Container",
         "Facile/Environment",
-        "Facile/Response",
         "Facile/Transformable",
         "Facile/Template/Driver",
         "Facile/Template/Base",
