@@ -31,8 +31,8 @@ return array(
     ),
     "facile" => array(
         "Facile/FacileServiceProvider",
+        "Facile/Container",
         "Facile/Factory",
-        "Facile/Response",
         "Facile/Transformable",
         "Facile/Template/Driver",
         "Facile/Template/Base",
@@ -94,6 +94,8 @@ return array(
     ),
     "support" => array(
         "Support/MessagesServiceProvider",
+        "Support/Contracts/CsvableInterface",
+        "Support/Collection",
         "Support/Expression",
         "Support/Manager",
         "Support/Messages",
