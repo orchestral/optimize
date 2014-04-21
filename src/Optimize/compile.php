@@ -94,6 +94,8 @@ return array(
     ),
     "support" => array(
         "Support/MessagesServiceProvider",
+        "Support/Contracts/CsvableInterface",
+        "Support/Collection",
         "Support/Expression",
         "Support/Manager",
         "Support/Messages",
