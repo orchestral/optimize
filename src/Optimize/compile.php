@@ -62,6 +62,7 @@ return array(
     "memory" => array(
         "Memory/MemoryManager",
         "Memory/Provider",
+        "Memory/ContainerTrait",
         "Memory/Abstractable/Container",
         "Memory/Abstractable/Handler",
         "Memory/MemoryHandlerInterface",
@@ -79,6 +80,7 @@ return array(
         "Notifier/NotifierServiceProvider",
         "Notifier/NotifierInterface",
         "Notifier/RecipientInterface",
+        "Notifier/NotifiableTrait",
     ),
     "resources" => array(
         "Resources/ResourcesServiceProvider",
@@ -92,6 +94,9 @@ return array(
     "support" => array(
         "Support/MessagesServiceProvider",
         "Support/Contracts/CsvableInterface",
+        "Support/Traits/ControllerResponseTrait",
+        "Support/Traits/DescendibleTrait",
+        "Support/Traits/QueryFilterTrait",
         "Support/Collection",
         "Support/Expression",
         "Support/Manager",
