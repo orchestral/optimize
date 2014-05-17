@@ -71,9 +71,6 @@ return array(
         "Memory/RuntimeMemoryHandler",
     ),
     "model" => array(
-        "Model/Role",
-        "Model/User",
-        "Model/UserMeta",
         "Model/Observer/Role",
         "Model/Memory/UserMetaProvider",
         "Model/Memory/UserMetaRepository",
