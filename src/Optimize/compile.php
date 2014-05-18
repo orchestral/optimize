@@ -20,14 +20,15 @@ return array(
         "Debug/Profiler",
     ),
     "extension" => array(
+        "Extension/Contracts/DebuggerInterface",
+        "Extension/Contracts/DispatcherInterface",
+        "Extension/Traits/OperationTrait",
         "Extension/ConfigManager",
         "Extension/Debugger",
         "Extension/Dispatcher",
         "Extension/Factory",
         "Extension/ProviderRepository",
         "Extension/RouteGenerator",
-        "Extension/Contracts/DebuggerInterface",
-        "Extension/Contracts/DispatcherInterface",
     ),
     "facile" => array(
         "Facile/FacileServiceProvider",
