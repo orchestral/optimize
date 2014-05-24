@@ -20,14 +20,15 @@ return array(
         "Debug/Profiler",
     ),
     "extension" => array(
+        "Extension/Contracts/DebuggerInterface",
+        "Extension/Contracts/DispatcherInterface",
+        "Extension/Traits/OperationTrait",
         "Extension/ConfigManager",
         "Extension/Debugger",
         "Extension/Dispatcher",
         "Extension/Factory",
         "Extension/ProviderRepository",
         "Extension/RouteGenerator",
-        "Extension/Contracts/DebuggerInterface",
-        "Extension/Contracts/DispatcherInterface",
     ),
     "facile" => array(
         "Facile/FacileServiceProvider",
@@ -62,6 +63,7 @@ return array(
     "memory" => array(
         "Memory/MemoryManager",
         "Memory/Provider",
+        "Memory/ContainerTrait",
         "Memory/Abstractable/Container",
         "Memory/Abstractable/Handler",
         "Memory/MemoryHandlerInterface",
@@ -71,9 +73,6 @@ return array(
         "Memory/RuntimeMemoryHandler",
     ),
     "model" => array(
-        "Model/Role",
-        "Model/User",
-        "Model/UserMeta",
         "Model/Observer/Role",
         "Model/Memory/UserMetaProvider",
         "Model/Memory/UserMetaRepository",
@@ -82,6 +81,7 @@ return array(
         "Notifier/NotifierServiceProvider",
         "Notifier/NotifierInterface",
         "Notifier/RecipientInterface",
+        "Notifier/NotifiableTrait",
     ),
     "resources" => array(
         "Resources/ResourcesServiceProvider",
@@ -95,6 +95,9 @@ return array(
     "support" => array(
         "Support/MessagesServiceProvider",
         "Support/Contracts/CsvableInterface",
+        "Support/Traits/ControllerResponseTrait",
+        "Support/Traits/DescendibleTrait",
+        "Support/Traits/QueryFilterTrait",
         "Support/Collection",
         "Support/Expression",
         "Support/Manager",
