@@ -88,6 +88,7 @@ return array(
         "Resources/Container",
         "Resources/Dispatcher",
         "Resources/Factory",
+        "Resources/Resolver",
         "Resources/Response",
         "Resources/Routing/ControllerDispatcher",
         "Resources/Routing/Route",
