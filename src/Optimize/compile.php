@@ -85,6 +85,7 @@ return array(
         "Resources/Container",
         "Resources/Dispatcher",
         "Resources/Environment",
+        "Resources/Resolver",
         "Resources/Response",
         "Resources/Routing/ControllerDispatcher",
         "Resources/Routing/Route",
