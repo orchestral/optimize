@@ -86,7 +86,6 @@ return array(
         "Notifier/NotifiableTrait",
         "Notifier/NotifierInterface",
         "Notifier/RecipientInterface",
-        "Notifier/NotifiableTrait",
         "Notifier/Receipt",
     ),
     "resources" => array(
