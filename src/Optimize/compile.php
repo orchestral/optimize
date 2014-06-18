@@ -11,6 +11,7 @@ return array(
     "auth" => array(
         "Auth/AuthManager",
         "Auth/Guard",
+        "Auth/Acl/AuthorizationTrait",
         "Auth/Acl/Container",
         "Auth/Acl/Factory",
         "Auth/Acl/Fluent",
@@ -22,6 +23,9 @@ return array(
     "extension" => array(
         "Extension/Contracts/DebuggerInterface",
         "Extension/Contracts/DispatcherInterface",
+        "Extension/Contracts/FactoryInterface",
+        "Extension/Contracts/RouteGeneratorInterface",
+        "Extension/Traits/DispatchableTrait",
         "Extension/Traits/OperationTrait",
         "Extension/ConfigManager",
         "Extension/Debugger",
@@ -79,9 +83,10 @@ return array(
     ),
     "notifier" => array(
         "Notifier/NotifierServiceProvider",
+        "Notifier/NotifiableTrait",
         "Notifier/NotifierInterface",
         "Notifier/RecipientInterface",
-        "Notifier/NotifiableTrait",
+        "Notifier/Receipt",
     ),
     "resources" => array(
         "Resources/ResourcesServiceProvider",
@@ -97,8 +102,10 @@ return array(
         "Support/MessagesServiceProvider",
         "Support/Contracts/CsvableInterface",
         "Support/Traits/ControllerResponseTrait",
+        "Support/Traits/DataContainerTrait",
         "Support/Traits/DescendibleTrait",
         "Support/Traits/QueryFilterTrait",
+        "Support/Traits/ValidationTrait",
         "Support/Collection",
         "Support/Expression",
         "Support/Manager",
