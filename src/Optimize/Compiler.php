@@ -40,8 +40,8 @@ class Compiler
      * @var array
      */
     protected $arrange = array(
+        'messages',
         'translation',
-        'testbench',
         'support',
         'memory',
         'facile',

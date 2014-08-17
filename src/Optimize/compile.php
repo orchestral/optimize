@@ -18,6 +18,9 @@ return array(
     ),
     "debug" => array(
         "Debug/DebugServiceProvider",
+        "Debug/Traits/MonologTrait",
+        "Debug/Traits/TimerProfileTrait",
+        "Debug/Listener",
         "Debug/Profiler",
     ),
     "extension" => array(
@@ -80,6 +83,10 @@ return array(
         "Model/Observer/Role",
         "Model/Memory/UserMetaProvider",
         "Model/Memory/UserMetaRepository",
+    ),
+    "messages" => array(
+        "Messages/MessagesServiceProvider",
+        "Messages/MessageBag",
     ),
     "notifier" => array(
         "Notifier/NotifierServiceProvider",
