@@ -101,13 +101,13 @@ class Compiler
         }
 
         // Append application file to the bottom.
-        $original = $this->config->get('compile', array());
+        $original = $this->config->get('compile.files', array());
 
         foreach ($original as $class) {
             $this->collection['added'][] = $class;
         }
 
-        $this->config->set('compile', $this->collection['added']);
+        $this->config->set('compile.files', $this->collection['added']);
 
         return new Fluent(array(
             'added'   => $this->collection['added'],
