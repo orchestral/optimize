@@ -45,11 +45,11 @@ class CompilerTest extends \PHPUnit_Framework_TestCase
             "{$path}/orchestra/asset/src/NoneExistClass.php",
         );
 
-        $config->shouldReceive('get')->once()->with('compile', array())
+        $config->shouldReceive('get')->once()->with('compile.files', array())
                 ->andReturn(array(
                     "app/Foobar.php",
                 ))
-            ->shouldReceive('set')->once()->with('compile', $added)->andReturn(null);
+            ->shouldReceive('set')->once()->with('compile.files', $added)->andReturn(null);
         $files->shouldReceive('exists')->once()
                 ->with("{$path}/orchestra/asset/src/AssetServiceProvider.php")->andReturn(true)
             ->shouldReceive('exists')->once()
