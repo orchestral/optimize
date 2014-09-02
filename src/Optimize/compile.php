@@ -121,7 +121,7 @@ return array(
         "Support/Nesty",
         "Support/Str",
         "Support/Validator",
-        "Support/Facades/Acl",
+        "Support/Facades/ACL",
         "Support/Facades/App",
         "Support/Facades/Asset",
         "Support/Facades/Config",
