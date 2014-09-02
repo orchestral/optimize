@@ -47,7 +47,6 @@ return array(
     ),
     "foundation" => array(
         "Foundation/SiteServiceProvider",
-        "Foundation/Abstractable/RouteManager",
         "Foundation/Application",
         "Foundation/Site",
     ),
@@ -66,6 +65,10 @@ return array(
         "Html/Table/Factory",
         "Html/Table/Grid",
         "Html/Table/TableBuilder",
+    ),
+    "http" => array(
+        "Http/FormRequest",
+        "Http/RouteManager",
     ),
     "memory" => array(
         "Memory/MemoryManager",
@@ -106,7 +109,6 @@ return array(
         "Resources/Routing/Route",
     ),
     "support" => array(
-        "Support/MessagesServiceProvider",
         "Support/Contracts/CsvableInterface",
         "Support/Traits/ControllerResponseTrait",
         "Support/Traits/DataContainerTrait",
@@ -116,9 +118,7 @@ return array(
         "Support/Collection",
         "Support/Expression",
         "Support/Manager",
-        "Support/Messages",
         "Support/Nesty",
-        "Support/Relic",
         "Support/Str",
         "Support/Validator",
         "Support/Facades/Acl",
@@ -128,6 +128,7 @@ return array(
         "Support/Facades/Decorator",
         "Support/Facades/Facile",
         "Support/Facades/Form",
+        "Support/Facades/HTML",
         "Support/Facades/Mail",
         "Support/Facades/Memory",
         "Support/Facades/Messages",

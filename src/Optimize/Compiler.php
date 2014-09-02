@@ -52,6 +52,7 @@ class Compiler
         'auth',
         'extension',
         'html',
+        'http',
         'resources',
         'view',
         'warden',
