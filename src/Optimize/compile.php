@@ -74,7 +74,6 @@ return array(
         "Memory/MemoryManager",
         "Memory/Provider",
         "Memory/ContainerTrait",
-        "Memory/Abstractable/Container",
         "Memory/Abstractable/Handler",
         "Memory/MemoryHandlerInterface",
         "Memory/CacheMemoryHandler",
