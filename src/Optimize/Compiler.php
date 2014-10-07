@@ -1,8 +1,8 @@
 <?php namespace Orchestra\Optimize;
 
+use Illuminate\Support\Fluent;
 use Illuminate\Config\Repository;
 use Illuminate\Filesystem\Filesystem;
-use Illuminate\Support\Fluent;
 
 class Compiler
 {
