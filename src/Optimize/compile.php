@@ -1,56 +1,52 @@
 <?php
 
-return array(
-    "asset" => array(
+return [
+    "asset" => [
         "Asset/AssetServiceProvider",
-        "Asset/Container",
+        "Asset/Asset",
         "Asset/DependencyResolver",
         "Asset/Dispatcher",
         "Asset/Factory",
-    ),
-    "auth" => array(
+    ],
+    "auth" => [
         "Auth/AuthManager",
         "Auth/Guard",
         "Auth/Acl/AuthorizationTrait",
         "Auth/Acl/Container",
         "Auth/Acl/Factory",
         "Auth/Acl/Fluent",
-    ),
-    "debug" => array(
+    ],
+    "debug" => [
         "Debug/DebugServiceProvider",
         "Debug/Traits/MonologTrait",
         "Debug/Traits/TimerProfileTrait",
         "Debug/Listener",
         "Debug/Profiler",
-    ),
-    "extension" => array(
-        "Extension/Contracts/DebuggerInterface",
-        "Extension/Contracts/DispatcherInterface",
-        "Extension/Contracts/FactoryInterface",
-        "Extension/Contracts/RouteGeneratorInterface",
+    ],
+    "extension" => [
         "Extension/Traits/DispatchableTrait",
         "Extension/Traits/OperationTrait",
         "Extension/ConfigManager",
-        "Extension/Debugger",
         "Extension/Dispatcher",
         "Extension/Factory",
         "Extension/ProviderRepository",
         "Extension/RouteGenerator",
-    ),
-    "facile" => array(
+        "Extension/SafeModeChecker",
+    ],
+    "facile" => [
         "Facile/FacileServiceProvider",
         "Facile/Container",
         "Facile/Factory",
         "Facile/Transformable",
         "Facile/Template/Driver",
         "Facile/Template/Base",
-    ),
-    "foundation" => array(
+    ],
+    "foundation" => [
         "Foundation/SiteServiceProvider",
         "Foundation/Application",
         "Foundation/Site",
-    ),
-    "html" => array(
+    ],
+    "html" => [
         "Html/HtmlBuilder",
         "Html/Abstractable/Builder",
         "Html/Abstractable/Factory",
@@ -65,39 +61,47 @@ return array(
         "Html/Table/Factory",
         "Html/Table/Grid",
         "Html/Table/TableBuilder",
-    ),
-    "http" => array(
+    ],
+    "kernel" => [
+        "Contracts/Support/DataContainer",
+        "Contracts/Memory/MemoryHandler",
+        "Contracts/Memory/Provider",
+        "Contracts/Extension/Dispatcher",
+        "Contracts/Extension/Factory",
+        "Contracts/Extension/RouteGenerator",
+        "Contracts/Extension/SafeMode",
+        "Contracts/Notification/Message",
+        "Contracts/Notification/Notification",
+        "Contracts/Notification/Receipt",
+        "Contracts/Notification/Recipient",
         "Http/FormRequest",
         "Http/RouteManager",
-    ),
-    "memory" => array(
+    ],
+    "memory" => [
         "Memory/MemoryManager",
         "Memory/Provider",
         "Memory/ContainerTrait",
         "Memory/Abstractable/Handler",
-        "Memory/MemoryHandlerInterface",
-        "Memory/CacheMemoryHandler",
-        "Memory/EloquentMemoryHandler",
-        "Memory/FluentMemoryHandler",
-        "Memory/RuntimeMemoryHandler",
-    ),
-    "model" => array(
+        "Memory/Handlers/Cache",
+        "Memory/Handlers/Eloquent",
+        "Memory/Handlers/Fluent",
+        "Memory/Handlers/Runtime",
+    ],
+    "model" => [
         "Model/Observer/Role",
         "Model/Memory/UserMetaProvider",
         "Model/Memory/UserMetaRepository",
-    ),
-    "messages" => array(
+    ],
+    "messages" => [
         "Messages/MessagesServiceProvider",
         "Messages/MessageBag",
-    ),
-    "notifier" => array(
+    ],
+    "notifier" => [
         "Notifier/NotifierServiceProvider",
         "Notifier/NotifiableTrait",
-        "Notifier/NotifierInterface",
-        "Notifier/RecipientInterface",
         "Notifier/Receipt",
-    ),
-    "resources" => array(
+    ],
+    "resources" => [
         "Resources/ResourcesServiceProvider",
         "Resources/Container",
         "Resources/Dispatcher",
@@ -106,8 +110,8 @@ return array(
         "Resources/Response",
         "Resources/Routing/ControllerDispatcher",
         "Resources/Routing/Route",
-    ),
-    "support" => array(
+    ],
+    "support" => [
         "Support/Contracts/CsvableInterface",
         "Support/Traits/ControllerResponseTrait",
         "Support/Traits/DataContainerTrait",
@@ -138,12 +142,12 @@ return array(
         "Facades/Table",
         "Facades/Theme",
         "Facades/Widget",
-    ),
-    "translation" => array(
+    ],
+    "translation" => [
         "Translation/TranslationServiceProvider",
         "Translation/FileLoader",
-    ),
-    "view" => array(
+    ],
+    "view" => [
         "View/ViewServiceProvider",
         "View/DecoratorServiceProvider",
         "View/Decorator",
@@ -152,12 +156,12 @@ return array(
         "View/Theme/Finder",
         "View/Theme/Manifest",
         "View/Theme/ThemeManager",
-    ),
-    "widget" => array(
+    ],
+    "widget" => [
         "Widget/WidgetManager",
         "Widget/Factory",
         "Widget/MenuWidgetHandler",
         "Widget/PaneWidgetHandler",
         "Widget/PlaceholderWidgetHandler",
-    ),
-);
+    ],
+];

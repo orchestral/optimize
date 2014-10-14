@@ -32,17 +32,18 @@ class Compiler
      *
      * @var array
      */
-    protected $components = array();
+    protected $components = [];
 
     /**
      * Arrange priority for compilation.
      *
      * @var array
      */
-    protected $arrange = array(
+    protected $arrange = [
         'messages',
         'translation',
         'support',
+        'kernel',
         'memory',
         'facile',
         'notifier',
@@ -58,17 +59,17 @@ class Compiler
         'warden',
         'widget',
         'foundation',
-    );
+    ];
 
     /**
      * Files collection.
      *
      * @var array
      */
-    protected $collection = array(
-        'added'   => array(),
-        'missing' => array(),
-    );
+    protected $collection = [
+        'added'   => [],
+        'missing' => [],
+    ];
 
     /**
      * Construct a new instance.
@@ -78,7 +79,7 @@ class Compiler
      * @param  string                               $path
      * @param  array                                $components
      */
-    public function __construct(Repository $config, Filesystem $files, $path, array $components = array())
+    public function __construct(Repository $config, Filesystem $files, $path, array $components = [])
     {
         $this->config = $config;
         $this->files = $files;
@@ -110,10 +111,10 @@ class Compiler
 
         $this->config->set('compile.files', $this->collection['added']);
 
-        return new Fluent(array(
+        return new Fluent([
             'added'   => $this->collection['added'],
             'missing' => $this->collection['missing'],
-        ));
+        ]);
     }
 
     /**
