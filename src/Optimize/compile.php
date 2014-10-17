@@ -65,7 +65,7 @@ return [
     ],
     "kernel" => [
         "Contracts/Support/DataContainer",
-        "Contracts/Memory/MemoryHandler",
+        "Contracts/Memory/Handler",
         "Contracts/Memory/Provider",
         "Contracts/Extension/Dispatcher",
         "Contracts/Extension/Factory",
