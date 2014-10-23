@@ -43,7 +43,6 @@ return [
     ],
     "foundation" => [
         "Foundation/SupportServiceProvider",
-        "Foundation/Application",
         "Foundation/Foundation",
         "Foundation/Meta",
     ],
@@ -73,12 +72,14 @@ return [
         "Contracts/Extension/SafeMode",
         "Contracts/Foundation/Foundation",
         "Contracts/Http/RouteManager",
+        "Contracts/Kernel/DeferrableServiceContainer",
         "Contracts/Notification/Message",
         "Contracts/Notification/Notification",
         "Contracts/Notification/Receipt",
         "Contracts/Notification/Recipient",
         "Http/FormRequest",
         "Http/RouteManager",
+        "Kernel/Application",
     ],
     "memory" => [
         "Memory/MemoryManager",
