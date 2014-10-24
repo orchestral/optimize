@@ -148,6 +148,7 @@ class Compiler
     protected function compileGroupClasses($name, array $classes)
     {
         $path = "{$this->path}/orchestra/{$name}";
+
         if (! $this->files->isDirectory($path)) {
             return ;
         }
