@@ -38,7 +38,6 @@ class CompilerTest extends \PHPUnit_Framework_TestCase
 
         $added = array(
             "{$path}/orchestra/asset/src/AssetServiceProvider.php",
-            "{$path}/orchestra/foo/src/FooServiceProvider.php",
             "app/Foobar.php",
         );
         $missing  = array(
@@ -50,12 +49,15 @@ class CompilerTest extends \PHPUnit_Framework_TestCase
                     "app/Foobar.php",
                 ))
             ->shouldReceive('set')->once()->with('compile.files', $added)->andReturn(null);
-        $files->shouldReceive('exists')->once()
+        $files->shouldReceive('isDirectory')->once()
+                ->with("{$path}/orchestra/asset")->andReturn(true)
+            ->shouldReceive('isDirectory')->once()
+                ->with("{$path}/orchestra/foo")->andReturn(false)
+            ->shouldReceive('exists')->once()
                 ->with("{$path}/orchestra/asset/src/AssetServiceProvider.php")->andReturn(true)
             ->shouldReceive('exists')->once()
-                ->with("{$path}/orchestra/asset/src/NoneExistClass.php")->andReturn(false)
-            ->shouldReceive('exists')->once()
-                ->with("{$path}/orchestra/foo/src/FooServiceProvider.php")->andReturn(true);
+                ->with("{$path}/orchestra/asset/src/NoneExistClass.php")->andReturn(false);
+
         $stub = new Compiler($config, $files, $path, $components);
         $compiled = $stub->run();
 

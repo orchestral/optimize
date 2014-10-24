@@ -147,8 +147,13 @@ class Compiler
      */
     protected function compileGroupClasses($name, array $classes)
     {
+        $path = "{$this->path}/orchestra/{$name}";
+        if (! $this->files->isDirectory($path)) {
+            return ;
+        }
+
         foreach ($classes as $class) {
-            $file = "{$this->path}/orchestra/{$name}/src/{$class}.php";
+            $file = "{$path}/src/{$class}.php";
 
             if ($this->files->exists($file)) {
                 $this->collection['added'][] = $file;
