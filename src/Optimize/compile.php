@@ -35,11 +35,11 @@ return [
     ],
     "facile" => [
         "Facile/FacileServiceProvider",
-        "Facile/Container",
+        "Facile/Facile",
         "Facile/Factory",
         "Facile/Transformable",
-        "Facile/Template/Driver",
-        "Facile/Template/Base",
+        "Facile/Template/Template",
+        "Facile/Template/Simple",
     ],
     "foundation" => [
         "Foundation/SupportServiceProvider",
