@@ -116,6 +116,7 @@ return [
         "Resources/Routing/Route",
     ],
     "support" => [
+        "Providers/Traits/AliasesProviderTrait",
         "Support/Contracts/CsvableInterface",
         "Support/Traits/ControllerResponseTrait",
         "Support/Traits/DataContainerTrait",
