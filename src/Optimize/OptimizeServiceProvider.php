@@ -58,6 +58,6 @@ class OptimizeServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return array('orchestra.commands.optimize', 'orchestra.optimize');
+        return ['orchestra.commands.optimize', 'orchestra.optimize'];
     }
 }
