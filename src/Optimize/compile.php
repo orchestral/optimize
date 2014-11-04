@@ -107,7 +107,7 @@ return [
     ],
     "resources" => [
         "Resources/ResourcesServiceProvider",
-        "Resources/Container",
+        "Resources/Router",
         "Resources/Dispatcher",
         "Resources/Factory",
         "Resources/Resolver",
