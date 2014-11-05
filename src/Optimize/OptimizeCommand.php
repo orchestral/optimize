@@ -71,7 +71,7 @@ class OptimizeCommand extends Command
     protected function callOptimize()
     {
         $force = $this->option('force');
-        $this->call('optimize', array('--force' => $force));
+        $this->call('optimize', ['--force' => $force]);
     }
 
     /**
@@ -81,8 +81,8 @@ class OptimizeCommand extends Command
      */
     protected function getOptions()
     {
-        return array(
-            array('force', null, InputOption::VALUE_NONE, 'Force the compiled class file to be written.'),
-        );
+        return [
+            ['force', null, InputOption::VALUE_NONE, 'Force the compiled class file to be written.'],
+        ];
     }
 }

@@ -1,15 +1,15 @@
 <?php namespace Orchestra\Optimize;
 
 use Illuminate\Support\Fluent;
-use Illuminate\Config\Repository;
 use Illuminate\Filesystem\Filesystem;
+use Illuminate\Contracts\Config\Repository;
 
 class Compiler
 {
     /**
      * Config instance.
      *
-     * @var \Illuminate\Config\Repository
+     * @var \Illuminate\Contracts\Config\Repository
      */
     protected $config;
 
@@ -74,10 +74,10 @@ class Compiler
     /**
      * Construct a new instance.
      *
-     * @param  \Illuminate\Config\Repository        $config
-     * @param  \Illuminate\Filesystem\Filesystem    $files
-     * @param  string                               $path
-     * @param  array                                $components
+     * @param  \Illuminate\Contracts\Config\Repository  $config
+     * @param  \Illuminate\Filesystem\Filesystem  $files
+     * @param  string  $path
+     * @param  array  $components
      */
     public function __construct(Repository $config, Filesystem $files, $path, array $components = [])
     {
