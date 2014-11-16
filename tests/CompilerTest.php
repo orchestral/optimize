@@ -28,11 +28,11 @@ class CompilerTest extends \PHPUnit_Framework_TestCase
 
         $components = array(
             'orchestra/asset' => array(
-                'AssetServiceProvider',
-                'NoneExistClass',
+                'src/AssetServiceProvider',
+                'src/NoneExistClass',
             ),
             'orchestra/foo' => array(
-                'FooServiceProvider',
+                'src/FooServiceProvider',
             ),
         );
 

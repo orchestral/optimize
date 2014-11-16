@@ -155,7 +155,7 @@ class Compiler
         }
 
         foreach ($classes as $class) {
-            $file = "{$path}/src/{$class}.php";
+            $file = "{$path}/{$class}.php";
 
             if ($this->files->exists($file)) {
                 $this->collection['added'][] = $file;
