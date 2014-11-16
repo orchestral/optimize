@@ -40,25 +40,26 @@ class Compiler
      * @var array
      */
     protected $arrange = [
-        'translation',
-        'support',
-        'kernel',
-        'messages',
-        'memory',
-        'facile',
-        'notifier',
-        'debug',
-        'model',
-        'asset',
-        'auth',
-        'extension',
-        'html',
-        'http',
-        'resources',
-        'view',
-        'warden',
-        'widget',
-        'foundation',
+        'illuminate/html',
+        'orchestra/translation',
+        'orchestra/support',
+        'orchestra/kernel',
+        'orchestra/messages',
+        'orchestra/memory',
+        'orchestra/facile',
+        'orchestra/notifier',
+        'orchestra/debug',
+        'orchestra/model',
+        'orchestra/asset',
+        'orchestra/auth',
+        'orchestra/extension',
+        'orchestra/html',
+        'orchestra/http',
+        'orchestra/resources',
+        'orchestra/view',
+        'orchestra/warden',
+        'orchestra/widget',
+        'orchestra/foundation',
     ];
 
     /**
@@ -147,7 +148,7 @@ class Compiler
      */
     protected function compileGroupClasses($name, array $classes)
     {
-        $path = "{$this->path}/orchestra/{$name}";
+        $path = "{$this->path}/{$name}";
 
         if (! $this->files->isDirectory($path)) {
             return ;

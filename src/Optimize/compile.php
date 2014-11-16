@@ -1,14 +1,18 @@
 <?php
 
 return [
-    "asset" => [
+    "illuminate/html" => [
+        "Html/HtmlBuilder",
+        "Html/FormBuilder",
+    ],
+    "orchestra/asset" => [
         "Asset/AssetServiceProvider",
         "Asset/Asset",
         "Asset/DependencyResolver",
         "Asset/Dispatcher",
         "Asset/Factory",
     ],
-    "auth" => [
+    "orchestra/auth" => [
         "Auth/AuthManager",
         "Auth/Guard",
         "Auth/Acl/AuthorizationTrait",
@@ -16,14 +20,14 @@ return [
         "Auth/Acl/Factory",
         "Auth/Acl/Fluent",
     ],
-    "debug" => [
+    "orchestra/debug" => [
         "Debug/DebugServiceProvider",
         "Debug/Traits/MonologTrait",
         "Debug/Traits/TimerProfileTrait",
         "Debug/Listener",
         "Debug/Profiler",
     ],
-    "extension" => [
+    "orchestra/extension" => [
         "Extension/Traits/DispatchableTrait",
         "Extension/Traits/OperationTrait",
         "Extension/ConfigManager",
@@ -33,7 +37,7 @@ return [
         "Extension/RouteGenerator",
         "Extension/SafeModeChecker",
     ],
-    "facile" => [
+    "orchestra/facile" => [
         "Facile/FacileServiceProvider",
         "Facile/Facile",
         "Facile/Factory",
@@ -41,14 +45,15 @@ return [
         "Facile/Template/Template",
         "Facile/Template/Simple",
     ],
-    "foundation" => [
+    "orchestra/foundation" => [
         "Foundation/SupportServiceProvider",
         "Foundation/Application",
         "Foundation/Foundation",
         "Foundation/Meta",
     ],
-    "html" => [
+    "orchestra/html" => [
         "Html/HtmlBuilder",
+        "Html/FormBuilder",
         "Html/Builder",
         "Html/Factory",
         "Html/Grid",
@@ -63,7 +68,7 @@ return [
         "Html/Table/Grid",
         "Html/Table/TableBuilder",
     ],
-    "kernel" => [
+    "orchestra/kernel" => [
         "Contracts/Support/DataContainer",
         "Contracts/Memory/Handler",
         "Contracts/Memory/Provider",
@@ -95,7 +100,7 @@ return [
         "Http/FormRequest",
         "Http/RouteManager",
     ],
-    "memory" => [
+    "orchestra/memory" => [
         "Memory/MemoryManager",
         "Memory/Provider",
         "Memory/ContainerTrait",
@@ -105,21 +110,21 @@ return [
         "Memory/Handlers/Fluent",
         "Memory/Handlers/Runtime",
     ],
-    "model" => [
+    "orchestra/model" => [
         "Model/Observer/Role",
         "Model/Memory/UserMetaProvider",
         "Model/Memory/UserMetaRepository",
     ],
-    "messages" => [
+    "orchestra/messages" => [
         "Messages/MessagesServiceProvider",
         "Messages/MessageBag",
     ],
-    "notifier" => [
+    "orchestra/notifier" => [
         "Notifier/NotifierServiceProvider",
         "Notifier/NotifiableTrait",
         "Notifier/Receipt",
     ],
-    "resources" => [
+    "orchestra/resources" => [
         "Resources/ResourcesServiceProvider",
         "Resources/Router",
         "Resources/Dispatcher",
@@ -129,7 +134,7 @@ return [
         "Resources/Routing/ControllerDispatcher",
         "Resources/Routing/Route",
     ],
-    "support" => [
+    "orchestra/support" => [
         "Providers/Traits/AliasesProviderTrait",
         "Providers/ServiceProvider",
         "Providers/FilterServiceProvider",
@@ -164,11 +169,11 @@ return [
         "Facades/Theme",
         "Facades/Widget",
     ],
-    "translation" => [
+    "orchestra/translation" => [
         "Translation/TranslationServiceProvider",
         "Translation/FileLoader",
     ],
-    "view" => [
+    "orchestra/view" => [
         "View/ViewServiceProvider",
         "View/DecoratorServiceProvider",
         "View/Decorator",
@@ -178,7 +183,7 @@ return [
         "View/Theme/Manifest",
         "View/Theme/ThemeManager",
     ],
-    "widget" => [
+    "orchestra/widget" => [
         "Widget/WidgetManager",
         "Widget/Handler",
         "Widget/Handlers/Menu",

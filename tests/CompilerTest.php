@@ -27,11 +27,11 @@ class CompilerTest extends \PHPUnit_Framework_TestCase
         $path   = '/var/www/laravel/vendor';
 
         $components = array(
-            'asset' => array(
+            'orchestra/asset' => array(
                 'AssetServiceProvider',
                 'NoneExistClass',
             ),
-            'foo' => array(
+            'orchestra/foo' => array(
                 'FooServiceProvider',
             ),
         );
