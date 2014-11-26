@@ -99,6 +99,10 @@ return [
         "src/Contracts/View/Theme/Finder",
         "src/Http/FormRequest",
         "src/Http/RouteManager",
+        "src/Routing/Router",
+        "src/Routing/ControllerDispatcher",
+        "src/Routing/Controller",
+        "src/Routing/Traits/ControllerResponseTrait",
     ],
     "orchestra/memory" => [
         "src/Memory/MemoryManager",
@@ -139,7 +143,6 @@ return [
         "src/Providers/ServiceProvider",
         "src/Providers/FilterServiceProvider",
         "src/Support/Contracts/CsvableInterface",
-        "src/Support/Traits/ControllerResponseTrait",
         "src/Support/Traits/DataContainerTrait",
         "src/Support/Traits/DescendibleTrait",
         "src/Support/Traits/QueryFilterTrait",
