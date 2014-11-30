@@ -15,10 +15,10 @@ return [
     "orchestra/auth" => [
         "src/Auth/AuthManager",
         "src/Auth/Guard",
-        "src/Auth/Authorization/AuthorizationTrait",
-        "src/Auth/Authorization/Authorization",
-        "src/Auth/Authorization/Factory",
-        "src/Auth/Authorization/Fluent",
+        "src/Authorization/AuthorizationTrait",
+        "src/Authorization/Authorization",
+        "src/Authorization/Factory",
+        "src/Authorization/Fluent",
     ],
     "orchestra/debug" => [
         "src/Debug/DebugServiceProvider",
