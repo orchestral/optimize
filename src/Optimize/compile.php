@@ -30,7 +30,7 @@ return [
     "orchestra/extension" => [
         "src/Extension/Traits/DispatchableTrait",
         "src/Extension/Traits/OperationTrait",
-        "src/Extension/ConfigManager",
+        "src/Extension/Config/Repository",
         "src/Extension/Dispatcher",
         "src/Extension/Factory",
         "src/Extension/ProviderRepository",
@@ -46,7 +46,7 @@ return [
         "src/Facile/Template/Simple",
     ],
     "orchestra/foundation" => [
-        "src/Foundation/SupportServiceProvider",
+        "src/Foundation/Providers/SupportServiceProvider",
         "src/Foundation/Application",
         "src/Foundation/Foundation",
         "src/Foundation/Meta",
