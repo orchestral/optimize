@@ -38,12 +38,12 @@ return [
         "src/SafeModeChecker",
     ],
     "orchestra/facile" => [
-        "src/Facile/FacileServiceProvider",
-        "src/Facile/Facile",
-        "src/Facile/Factory",
-        "src/Facile/Transformable",
-        "src/Facile/Template/Template",
-        "src/Facile/Template/Simple",
+        "src/FacileServiceProvider",
+        "src/Facile",
+        "src/Factory",
+        "src/Transformable",
+        "src/Template/Template",
+        "src/Template/Simple",
     ],
     "orchestra/foundation" => [
         "src/Providers/SupportServiceProvider",
