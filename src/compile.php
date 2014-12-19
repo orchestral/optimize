@@ -47,6 +47,8 @@ return [
     ],
     "orchestra/foundation" => [
         "src/Providers/SupportServiceProvider",
+        "src/Support/Providers/ExtensionServiceProvider",
+        "src/Support/MenuHandler",
         "src/Application",
         "src/Foundation",
         "src/Meta",
