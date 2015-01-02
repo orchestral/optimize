@@ -1,10 +1,6 @@
 <?php
 
 return [
-    "illuminate/html" => [
-        "HtmlBuilder",
-        "FormBuilder",
-    ],
     "orchestra/asset" => [
         "src/AssetServiceProvider",
         "src/Asset",
@@ -54,6 +50,13 @@ return [
         "src/Meta",
     ],
     "orchestra/html" => [
+        "src/Support/Traits/CheckerTrait",
+        "src/Support/Traits/CreatorTrait",
+        "src/Support/Traits/InputTrait",
+        "src/Support/Traits/SelectionTrait",
+        "src/Support/Traits/SessionHelperTrait",
+        "src/Support/Traits/FormBuilder",
+        "src/Support/Traits/HtmlBuilder",
         "src/HtmlBuilder",
         "src/FormBuilder",
         "src/Builder",
