@@ -25,6 +25,7 @@ return [
     ],
     "orchestra/extension" => [
         "src/Traits/DispatchableTrait",
+        "src/Traits/DomainAwareTrait",
         "src/Traits/OperationTrait",
         "src/Config/Repository",
         "src/Dispatcher",
