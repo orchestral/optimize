@@ -101,7 +101,7 @@ class Compiler
         }
 
         // Append application file to the bottom.
-        $original = $this->config->get('compile.files', array());
+        $original = $this->config->get('compile.files', []);
 
         foreach ($original as $class) {
             $this->collection['added'][] = $class;
