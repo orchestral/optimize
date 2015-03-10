@@ -1,7 +1,6 @@
 <?php namespace Orchestra\Optimize\TestCase;
 
 use Mockery as m;
-use Illuminate\Container\Container;
 use Illuminate\Support\Fluent;
 use Orchestra\Optimize\Compiler;
 
@@ -26,28 +25,28 @@ class CompilerTest extends \PHPUnit_Framework_TestCase
         $files  = m::mock('\Illuminate\Filesystem\Filesystem');
         $path   = '/var/www/laravel/vendor';
 
-        $components = array(
-            'orchestra/asset' => array(
+        $components = [
+            'orchestra/asset' => [
                 'src/AssetServiceProvider',
                 'src/NoneExistClass',
-            ),
-            'orchestra/foo' => array(
+            ],
+            'orchestra/foo' => [
                 'src/FooServiceProvider',
-            ),
-        );
+            ],
+        ];
 
-        $added = array(
+        $added = [
             "{$path}/orchestra/asset/src/AssetServiceProvider.php",
             "app/Foobar.php",
-        );
-        $missing  = array(
+        ];
+        $missing  = [
             "{$path}/orchestra/asset/src/NoneExistClass.php",
-        );
+        ];
 
-        $config->shouldReceive('get')->once()->with('compile.files', array())
-                ->andReturn(array(
+        $config->shouldReceive('get')->once()->with('compile.files', [])
+                ->andReturn([
                     "app/Foobar.php",
-                ))
+                ])
             ->shouldReceive('set')->once()->with('compile.files', $added)->andReturn(null);
         $files->shouldReceive('isDirectory')->once()
                 ->with("{$path}/orchestra/asset")->andReturn(true)
@@ -58,13 +57,13 @@ class CompilerTest extends \PHPUnit_Framework_TestCase
             ->shouldReceive('exists')->once()
                 ->with("{$path}/orchestra/asset/src/NoneExistClass.php")->andReturn(false);
 
-        $stub = new Compiler($config, $files, $path, $components);
+        $stub     = new Compiler($config, $files, $path, $components);
         $compiled = $stub->run();
 
-        $expected = new Fluent(array(
+        $expected = new Fluent([
             'added'   => $added,
             'missing' => $missing,
-        ));
+        ]);
 
         $this->assertEquals($expected, $compiled);
     }

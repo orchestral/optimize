@@ -18,7 +18,7 @@ class OptimizeServiceProviderTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $this->app = new Container;
+        $this->app = new Container();
     }
 
     /**
@@ -37,13 +37,13 @@ class OptimizeServiceProviderTest extends \PHPUnit_Framework_TestCase
      */
     public function testRegisterMethod()
     {
-        $app = $this->app;
-        $app['config'] = $config = m::mock('\Illuminate\Contracts\Config\Repository');
-        $app['events'] = $events = m::mock('\Illuminate\Contracts\Events\Dispatcher');
-        $app['files']  = $files  = m::mock('\Illuminate\Filesystem\Filesystem');
+        $app              = $this->app;
+        $app['config']    = $config    = m::mock('\Illuminate\Contracts\Config\Repository');
+        $app['events']    = $events    = m::mock('\Illuminate\Contracts\Events\Dispatcher');
+        $app['files']     = $files     = m::mock('\Illuminate\Filesystem\Filesystem');
         $app['path.base'] = '/var/www/laravel';
 
-        $files->shouldReceive('getRequire')->once()->andReturn(array());
+        $files->shouldReceive('getRequire')->once()->andReturn([]);
         $events->shouldReceive('listen')->once()->with('artisan.start', m::type('Closure'))->andReturn(null);
 
         $stub = new OptimizeServiceProvider($app);
@@ -62,10 +62,10 @@ class OptimizeServiceProviderTest extends \PHPUnit_Framework_TestCase
     {
         $stub = new OptimizeServiceProvider($this->app);
 
-        $expected = array(
+        $expected = [
             'orchestra.commands.optimize',
             'orchestra.optimize',
-        );
+        ];
 
         $this->assertEquals($expected, $stub->provides());
     }
