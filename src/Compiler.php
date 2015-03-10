@@ -79,9 +79,9 @@ class Compiler
      */
     public function __construct(Repository $config, Filesystem $files, $path, array $components = [])
     {
-        $this->config = $config;
-        $this->files = $files;
-        $this->path = $path;
+        $this->config     = $config;
+        $this->files      = $files;
+        $this->path       = $path;
         $this->components = $components;
     }
 
@@ -141,6 +141,7 @@ class Compiler
      *
      * @param  string  $name
      * @param  array   $classes
+     *
      * @return void
      */
     protected function compileGroupClasses($name, array $classes)
