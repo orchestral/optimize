@@ -7,7 +7,7 @@ class OptimizeServiceProvider extends ServiceProvider
     /**
      * Indicates if loading of the provider is deferred.
      *
-     * @var boolean
+     * @var bool
      */
     protected $defer = true;
 
@@ -45,7 +45,7 @@ class OptimizeServiceProvider extends ServiceProvider
     protected function registerCompiler()
     {
         $this->app->singleton('orchestra.optimize', function ($app) {
-            $components = $app['files']->getRequire(__DIR__."/compile.php");
+            $components = $app['files']->getRequire(__DIR__.'/compile.php');
             $path = realpath($app['path.base'].'/vendor');
 
             return new Compiler($app['config'], $app['files'], $path, $components);
