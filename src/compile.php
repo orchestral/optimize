@@ -173,6 +173,7 @@ return [
         "src/Providers/Traits/AliasesProviderTrait",
         "src/Providers/Traits/PackageProviderTrait",
         "src/Providers/ServiceProvider",
+        "src/Providers/CommandServiceProvider",
         "src/Providers/FilterServiceProvider",
         "src/Support/Contracts/CsvableInterface",
         "src/Support/Traits/DataContainerTrait",
