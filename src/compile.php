@@ -65,6 +65,7 @@ return [
         'src/Http/Filters/IsInstalled',
         'src/Http/Filters/IsRegistrable',
         'src/Http/Filters/VerifyCsrfToken',
+        'src/Http/Middleware/LoginAs',
         'src/Http/Middleware/UseBackendTheme',
     ],
     'orchestra/html' => [
