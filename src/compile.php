@@ -65,7 +65,9 @@ return [
         'src/Http/Filters/IsInstalled',
         'src/Http/Filters/IsRegistrable',
         'src/Http/Filters/VerifyCsrfToken',
+        'src/Http/Middleware/LoginAs',
         'src/Http/Middleware/UseBackendTheme',
+        'src/Http/Middleware/VerifyCsrfToken',
     ],
     'orchestra/html' => [
         'src/Support/Traits/CheckerTrait',
@@ -171,9 +173,12 @@ return [
     ],
     'orchestra/support' => [
         'src/Providers/Traits/AliasesProviderTrait',
+        'src/Providers/Traits/FilterProviderTrait',
+        'src/Providers/Traits/MiddlewareProviderTrait',
         'src/Providers/Traits/PackageProviderTrait',
         'src/Providers/ServiceProvider',
         'src/Providers/CommandServiceProvider',
+        'src/Providers/PipelineServiceProvider',
         'src/Providers/FilterServiceProvider',
         'src/Support/Contracts/CsvableInterface',
         'src/Support/Traits/DataContainerTrait',
