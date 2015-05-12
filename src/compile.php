@@ -171,8 +171,12 @@ return [
     ],
     'orchestra/support' => [
         'src/Providers/Traits/AliasesProviderTrait',
+        'src/Providers/Traits/FilterProviderTrait',
+        'src/Providers/Traits/MiddlewareProviderTrait',
         'src/Providers/Traits/PackageProviderTrait',
         'src/Providers/ServiceProvider',
+        'src/Providers/CommandServiceProvider',
+        'src/Providers/PipelineServiceProvider',
         'src/Providers/FilterServiceProvider',
         'src/Support/Contracts/CsvableInterface',
         'src/Support/Traits/DataContainerTrait',
