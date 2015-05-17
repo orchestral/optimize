@@ -2,6 +2,7 @@
 
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Output\OutputInterface;
 
 class OptimizeCommand extends Command
 {
@@ -58,8 +59,10 @@ class OptimizeCommand extends Command
     {
         $collection = $this->compiler->run();
 
-        foreach ($collection->missing as $file) {
-            $this->comment("File not found: [{$file}]");
+        foreach ($collection->get('missing') as $file) {
+            if ($this->getOutput()->getVerbosity() === OutputInterface::VERBOSITY_VERY_VERBOSE) {
+                $this->comment("File not found: [{$file}]");
+            }
         }
     }
 
