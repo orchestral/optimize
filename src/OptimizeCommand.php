@@ -60,7 +60,7 @@ class OptimizeCommand extends Command
         $collection = $this->compiler->run();
 
         foreach ($collection->get('missing') as $file) {
-            if ($this->getOutput()->getVerbosity() === OutputInterface::VERBOSITY_VERY_VERBOSE) {
+            if ($this->getOutput()->getVerbosity() >= OutputInterface::VERBOSITY_VERY_VERBOSE) {
                 $this->comment("File not found: [{$file}]");
             }
         }
