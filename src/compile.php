@@ -11,6 +11,7 @@ return [
     'orchestra/auth' => [
         'src/Auth/AuthManager',
         'src/Auth/Guard',
+        'src/Authorization/Keyword',
         'src/Authorization/AuthorizationTrait',
         'src/Authorization/Authorization',
         'src/Authorization/Factory',
