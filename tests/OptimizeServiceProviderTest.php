@@ -7,26 +7,10 @@ use Orchestra\Optimize\OptimizeServiceProvider;
 class OptimizeServiceProviderTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * Application instance.
-     *
-     * @var \Illuminate\Container\Container
-     */
-    protected $app;
-
-    /**
-     * Setup the test environment.
-     */
-    public function setUp()
-    {
-        $this->app = new Container();
-    }
-
-    /**
      * Teardown the test environment.
      */
     public function tearDown()
     {
-        unset($this->app);
         m::close();
     }
 
@@ -37,11 +21,16 @@ class OptimizeServiceProviderTest extends \PHPUnit_Framework_TestCase
      */
     public function testRegisterMethod()
     {
-        $app              = $this->app;
-        $app['config']    = $config    = m::mock('\Illuminate\Contracts\Config\Repository');
-        $app['events']    = $events    = m::mock('\Illuminate\Contracts\Events\Dispatcher');
-        $app['files']     = $files     = m::mock('\Illuminate\Filesystem\Filesystem');
-        $app['path.base'] = '/var/www/laravel';
+        $app    = m::mock('\Illuminate\Container\Container[basePath]');
+        $config = m::mock('\Illuminate\Contracts\Config\Repository');
+        $events = m::mock('\Illuminate\Contracts\Events\Dispatcher');
+        $files  = m::mock('\Illuminate\Filesystem\Filesystem');
+
+        $app->instance('config', $config);
+        $app->instance('events', $events);
+        $app->instance('files', $files);
+
+        $app->shouldReceive('basePath')->once()->andReturn('/var/www/laravel');
 
         $files->shouldReceive('getRequire')->once()->andReturn([]);
         $events->shouldReceive('listen')->once()->with('artisan.start', m::type('Closure'))->andReturn(null);
@@ -60,7 +49,7 @@ class OptimizeServiceProviderTest extends \PHPUnit_Framework_TestCase
      */
     public function testProvidesMethod()
     {
-        $stub = new OptimizeServiceProvider($this->app);
+        $stub = new OptimizeServiceProvider(null);
 
         $expected = [
             'orchestra.commands.optimize',
