@@ -31,7 +31,7 @@ class OptimizeServiceProvider extends ServiceProvider
     protected function registerCommand()
     {
         $this->app->singleton('orchestra.commands.optimize', function ($app) {
-            return new OptimizeCommand($app['orchestra.optimize']);
+            return new OptimizeCommand($app->make('orchestra.optimize'));
         });
 
         $this->commands('orchestra.commands.optimize');
@@ -45,10 +45,11 @@ class OptimizeServiceProvider extends ServiceProvider
     protected function registerCompiler()
     {
         $this->app->singleton('orchestra.optimize', function ($app) {
-            $components = $app['files']->getRequire(__DIR__.'/compile.php');
-            $path = realpath($app['path.base'].'/vendor');
+            $files = $app->make('files');
+            $components = $files->getRequire(__DIR__.'/compile.php');
+            $path = realpath($app->basePath().'/vendor');
 
-            return new Compiler($app['config'], $app['files'], $path, $components);
+            return new Compiler($app->make('config'), $files, $path, $components);
         });
     }
 

@@ -1,17 +1,16 @@
 <?php namespace Orchestra\Optimize;
 
 use Illuminate\Console\Command;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 class OptimizeCommand extends Command
 {
     /**
-     * The console command name.
+     * The console command signature.
      *
      * @var string
      */
-    protected $name = 'orchestra:optimize';
+    protected $signature = 'orchestra:optimize {--force : Force the compiled class file to be written.}';
 
     /**
      * The console command description.
@@ -73,19 +72,6 @@ class OptimizeCommand extends Command
      */
     protected function callOptimize()
     {
-        $force = $this->option('force');
-        $this->call('optimize', ['--force' => $force]);
-    }
-
-    /**
-     * Get the console command options.
-     *
-     * @return array
-     */
-    protected function getOptions()
-    {
-        return [
-            ['force', null, InputOption::VALUE_NONE, 'Force the compiled class file to be written.'],
-        ];
+        $this->call('optimize', ['--force' => $this->option('force')]);
     }
 }

@@ -11,6 +11,7 @@ return [
     'orchestra/auth' => [
         'src/Auth/AuthManager',
         'src/Auth/Guard',
+        'src/Authorization/Keyword',
         'src/Authorization/AuthorizationTrait',
         'src/Authorization/Authorization',
         'src/Authorization/Factory',
@@ -130,6 +131,7 @@ return [
         'src/Config/Repository',
         'src/Config/Bootstrap/LoadConfiguration',
         'src/Database/CacheDecorator',
+        'stc/Http/Traits/PassThroughTrait',
         'src/Http/FormRequest',
         'src/Http/RouteManager',
         'src/Routing/Router',
