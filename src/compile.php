@@ -131,7 +131,7 @@ return [
         'src/Config/Repository',
         'src/Config/Bootstrap/LoadConfiguration',
         'src/Database/CacheDecorator',
-        'stc/Http/Traits/PassThroughTrait',
+        'src/Http/Traits/PassThroughTrait',
         'src/Http/FormRequest',
         'src/Http/RouteManager',
         'src/Routing/Router',
