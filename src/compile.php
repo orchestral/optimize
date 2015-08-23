@@ -33,7 +33,7 @@ return [
         'src/Factory',
         'src/ProviderRepository',
         'src/RouteGenerator',
-        'src/SafeModeChecker',
+        'src/StatusChecker',
         'src/Bootstrap/LoadExtension',
     ],
     'orchestra/facile' => [
@@ -102,7 +102,7 @@ return [
         'src/Contracts/Extension/Dispatcher',
         'src/Contracts/Extension/Factory',
         'src/Contracts/Extension/RouteGenerator',
-        'src/Contracts/Extension/SafeMode',
+        'src/Contracts/Extension/StatusChecker',
         'src/Contracts/Foundation/DeferrableServiceContainer',
         'src/Contracts/Foundation/Foundation',
         'src/Contracts/Html/Factory',
