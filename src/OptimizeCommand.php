@@ -1,5 +1,6 @@
 <?php namespace Orchestra\Optimize;
 
+use Illuminate\Support\Fluent;
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -58,13 +59,37 @@ class OptimizeCommand extends Command
     {
         $collection = $this->compiler->run();
 
+        $this->displayAddedFiles($collection);
+
+        $this->displayMissingFiles($collection);
+    }
+
+    /**
+     * Display added files.
+     *
+     * @param  \Illuminate\Support\Fluent  $collection
+     *
+     * @return void
+     */
+    protected function displayAddedFiles(Fluent $collection)
+    {
         if ($this->getOutput()->getVerbosity() >= OutputInterface::VERBOSITY_VERY_VERBOSE) {
             foreach ($collection->get('added') as $file) {
                 $this->info("File added: [{$file}]");
             }
         }
+    }
 
-         if ($this->getOutput()->getVerbosity() >= OutputInterface::VERBOSITY_VERBOSE) {
+    /**
+     * Display missing files.
+     *
+     * @param  \Illuminate\Support\Fluent  $collection
+     *
+     * @return void
+     */
+    protected function displayMissingFiles(Fluent $collection)
+    {
+        if ($this->getOutput()->getVerbosity() >= OutputInterface::VERBOSITY_VERBOSE) {
             foreach ($collection->get('missing') as $file) {
                 $this->comment("File not found: [{$file}]");
             }
