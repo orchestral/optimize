@@ -31,6 +31,7 @@ return [
         'src/Config/Repository',
         'src/Dispatcher',
         'src/Factory',
+        'src/Plugin',
         'src/ProviderRepository',
         'src/RouteGenerator',
         'src/StatusChecker',
@@ -96,6 +97,7 @@ return [
     ],
     'orchestra/kernel' => [
         'src/Contracts/Support/DataContainer',
+        'src/Contracts/Authorization/Authorizable',
         'src/Contracts/Memory/Handler',
         'src/Contracts/Memory/Provider',
         'src/Contracts/Config/PackageRepository',
@@ -191,6 +193,7 @@ return [
         'src/Support/Traits/ValidationTrait',
         'src/Support/Collection',
         'src/Support/Expression',
+        'src/Support/Keyword',
         'src/Support/Manager',
         'src/Support/Nesty',
         'src/Support/Str',
