@@ -16,6 +16,7 @@ return [
         'src/Authorization/Authorization',
         'src/Authorization/Factory',
         'src/Authorization/Fluent',
+        'src/Authorization/Policy',
     ],
     'orchestra/debug' => [
         'src/DebugServiceProvider',
