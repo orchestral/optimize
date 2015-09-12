@@ -234,6 +234,7 @@ return [
     ],
     'orchestra/widget' => [
         'src/WidgetManager',
+        'src/Fluent/Menu',
         'src/Handler',
         'src/Handlers/Menu',
         'src/Handlers/Pane',
