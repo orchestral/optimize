@@ -48,6 +48,7 @@ return [
     'orchestra/foundation' => [
         'src/Providers/SupportServiceProvider',
         'src/Support/Providers/Traits/RouteProviderTrait',
+        'src/Support/Providers/ModuleServiceProvider',
         'src/Support/Providers/ExtensionServiceProvider',
         'src/Support/Providers/ExtensionRouteServiceProvider',
         'src/Support/Providers/RouteServiceProvider',
