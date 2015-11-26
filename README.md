@@ -46,6 +46,6 @@ Add following service providers in `config/app.php`.
 
     // ...
 
-    'Orchestra\Optimize\OptimizeServiceProvider',
+    Orchestra\Optimize\OptimizeServiceProvider::class,
 ],
 ```
