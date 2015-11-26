@@ -70,6 +70,7 @@ return [
         'src/Http/Middleware/RedirectIfAuthenticated',
         'src/Http/Middleware/RedirectIfInstalled',
         'src/Http/Middleware/UseBackendTheme',
+        'src/Http/Middleware/RequireCsrfToken',
         'src/Http/Middleware/VerifyCsrfToken',
     ],
     'orchestra/html' => [
