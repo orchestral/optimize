@@ -33,7 +33,8 @@ class OptimizeServiceProviderTest extends \PHPUnit_Framework_TestCase
         $app->shouldReceive('basePath')->once()->andReturn('/var/www/laravel');
 
         $files->shouldReceive('getRequire')->once()->andReturn([]);
-        $events->shouldReceive('listen')->once()->with('artisan.start', m::type('Closure'))->andReturn(null);
+        $events->shouldReceive('listen')->once()
+            ->with('Illuminate\Console\Events\ArtisanStarting', m::type('Closure'))->andReturn(null);
 
         $stub = new OptimizeServiceProvider($app);
 
