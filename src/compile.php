@@ -53,6 +53,7 @@ return [
         'src/Support/Providers/ExtensionRouteServiceProvider',
         'src/Support/Providers/RouteServiceProvider',
         'src/Support/MenuHandler',
+        'src/Listeners/UserAccess',
         'src/Application',
         'src/Foundation',
         'src/Meta',
