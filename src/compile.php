@@ -107,13 +107,6 @@ return [
         'src/Http/Middleware/VerifyCsrfToken',
     ],
     'orchestra/html' => [
-        'src/Support/Traits/CheckerTrait',
-        'src/Support/Traits/CreatorTrait',
-        'src/Support/Traits/InputTrait',
-        'src/Support/Traits/SelectionTrait',
-        'src/Support/Traits/SessionHelperTrait',
-        'src/Support/FormBuilder',
-        'src/Support/HtmlBuilder',
         'src/HtmlBuilder',
         'src/FormBuilder',
         'src/Builder',
