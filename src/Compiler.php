@@ -40,6 +40,7 @@ class Compiler
      * @var array
      */
     protected $arrange = [
+        'orchestra/contracts',
         'orchestra/translation',
         'orchestra/support',
         'orchestra/kernel',
@@ -53,7 +54,6 @@ class Compiler
         'orchestra/auth',
         'orchestra/extension',
         'orchestra/html',
-        'orchestra/resources',
         'orchestra/view',
         'orchestra/widget',
         'orchestra/foundation',
