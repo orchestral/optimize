@@ -135,7 +135,6 @@ return [
         'src/Http/FormRequest',
         'src/Http/RouteManager',
         'src/Routing/Router',
-        'src/Routing/ControllerDispatcher',
         'src/Routing/Controller',
         'src/Routing/Traits/ControllerResponseTrait',
     ],
