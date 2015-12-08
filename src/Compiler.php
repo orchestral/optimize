@@ -54,7 +54,6 @@ class Compiler
         'orchestra/auth',
         'orchestra/extension',
         'orchestra/html',
-        'orchestra/resources',
         'orchestra/view',
         'orchestra/widget',
         'orchestra/foundation',

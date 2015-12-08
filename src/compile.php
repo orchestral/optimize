@@ -163,16 +163,6 @@ return [
         'src/NotifiableTrait',
         'src/Receipt',
     ],
-    'orchestra/resources' => [
-        'src/ResourcesServiceProvider',
-        'src/Router',
-        'src/Dispatcher',
-        'src/Factory',
-        'src/Resolver',
-        'src/Response',
-        'src/Routing/ControllerDispatcher',
-        'src/Routing/Route',
-    ],
     'orchestra/support' => [
         'src/Providers/Traits/AliasesProviderTrait',
         'src/Providers/Traits/EventProviderTrait',
