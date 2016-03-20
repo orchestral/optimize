@@ -1,4 +1,6 @@
-<?php namespace Orchestra\Optimize;
+<?php
+
+namespace Orchestra\Optimize;
 
 use Illuminate\Support\ServiceProvider;
 
