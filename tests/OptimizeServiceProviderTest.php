@@ -23,14 +23,18 @@ class OptimizeServiceProviderTest extends \PHPUnit_Framework_TestCase
     {
         $app    = m::mock('\Illuminate\Container\Container[basePath]');
         $config = m::mock('\Illuminate\Contracts\Config\Repository');
+        $events = m::mock('\Illuminate\Contracts\Events\Dispatcher');
         $files  = m::mock('\Illuminate\Filesystem\Filesystem');
 
         $app->instance('config', $config);
+        $app->instance('events', $events);
         $app->instance('files', $files);
 
         $app->shouldReceive('basePath')->once()->andReturn('/var/www/laravel');
 
         $files->shouldReceive('getRequire')->once()->andReturn([]);
+        $events->shouldReceive('listen')
+            ->with('Illuminate\Console\Events\ArtisanStarting', m::type('Closure'))->andReturn(null);
 
         $stub = new OptimizeServiceProvider($app);
 
